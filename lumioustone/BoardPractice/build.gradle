@@ -1,6 +1,26 @@
-plugins {
-    id 'java'
+buildscript {
+    ext{//전역변수 생성
+        springBootVersion = '2.1.7.RELEASE'
+    }
+
+    repositories {
+        mavenCentral()
+        jcenter() //라이브러리 업로드를 간단하게 해주는 저장 (현재 지원중단)
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
+
+//plugins {
+//    id 'java'
+//}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 group 'com.lumioustone'
 version '1.0-SNAPSHOT'
@@ -10,6 +30,10 @@ repositories {
 }
 
 dependencies {
+
+    compileOnly('org.springframework.boot:spring-boot-starter-web')
+
+    testCompileOnly('org.springframework.boot:spring-boot-starter-test')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
