@@ -1,7 +1,7 @@
 ---
-name: "[챕터] 제목입력"
+name: Question 등록
 about: 공부하다 모르는 내용을 issue로 등록합니다.
-title: "[Question]"
+title: "[챕터이름] 제목"
 labels: question
 assignees: ''
 
