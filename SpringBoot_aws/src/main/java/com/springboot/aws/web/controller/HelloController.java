@@ -1,4 +1,4 @@
-package com.springboot.aws.web;
+package com.springboot.aws.web.controller;
 
 import com.springboot.aws.web.dto.HelloResponseDto;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.springboot.aws.web;
+package com.springboot.aws.web.controller;
 
 import com.springboot.aws.service.posts.PostsService;
 import com.springboot.aws.web.dto.PostsResponseDto;
@@ -20,6 +20,12 @@ public class PostsApiController {
     @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
+    }
+
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
     }
 
     @GetMapping("/api/v1/posts/{id}")
