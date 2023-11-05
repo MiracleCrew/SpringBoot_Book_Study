@@ -18,6 +18,8 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
+        // @LoginUser 어노테이션과 ArgumentResolver를 통해,
+        // httpSession.getAttribute("user")를 매번 사용하지 않아도 된다.
         model.addAttribute("posts", postsService.findAllDesc());
         if (user != null) {
             model.addAttribute("userName", user.getName());
