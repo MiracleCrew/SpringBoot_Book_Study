@@ -6,7 +6,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-/**
+/*
  * @EnableWebSecurity
  * Spring Security 설정 활성화
  */
@@ -18,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        /**
+        /*
          *  CSRF (Cross Site Request Forgery)
          *   - 사이트 간 요청 위조
          *   - 일반 사용자의 의도와 다르게 공격자에 의도한 행위를 요청하게 만드는 보내는 행위

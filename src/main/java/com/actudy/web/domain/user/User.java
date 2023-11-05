@@ -25,8 +25,7 @@ public class User extends BaseTimeEntity {
     @Column
     private String picture;
 
-
-    /**
+    /*
      * @Enumerated(EnumType.STRING)
      * 1. JPA로 데이터 저장 시 Enum 값의 형태 지정
      * 2. default로 int형이 저장
