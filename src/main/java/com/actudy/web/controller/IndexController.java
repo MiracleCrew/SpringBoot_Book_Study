@@ -1,5 +1,7 @@
 package com.actudy.web.controller;
 
+import com.actudy.web.config.auth.LoginUser;
+import com.actudy.web.config.auth.dto.SessionUser;
 import com.actudy.web.dto.PostsResponseDto;
 import com.actudy.web.service.PostsService;
 import lombok.RequiredArgsConstructor;
@@ -15,13 +17,16 @@ public class IndexController {
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 
     @GetMapping("/posts/save")
-    public String postSave() {
+    public String postsSave() {
         return "posts-save";
     }
 
